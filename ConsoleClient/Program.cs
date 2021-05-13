@@ -29,7 +29,7 @@ namespace ConsoleClient
         private static async Task<bool> CheckLicense(string key)
         {
             using var hhtp = new HttpClient();
-            var url = $"https://" + $"localhost:44363/api/license/is-active/{key}";
+            var url = $"https://localhost:44363/api/license/is-active/{key}";
             var json = await hhtp.GetStringAsync(url);
             return JsonConvert.DeserializeObject<bool>(json);
         }
